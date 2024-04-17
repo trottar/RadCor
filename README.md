@@ -63,16 +63,16 @@
 # 2) Model Input to Radiate
 ## a) Cross Section Generation
 ### i) Below are the equations I used for unpolarized cross section, longitudinally polarized cross section difference, and transversely polarized cross section difference using the unpolarized structure functions F1 and F2 and the polarized structure functions g1 and g2:
-![Collage of source image in top right, target image in top left, and output image in bottom left](1024x768files/1024x768collage_final.png)
-![Collage of source image in top right, target image in top left, and output image in bottom left](1024x768files/1024x768collage_final.png)
-![Collage of source image in top right, target image in top left, and output image in bottom left](1024x768files/1024x768collage_final.png)
-![Collage of source image in top right, target image in top left, and output image in bottom left](1024x768files/1024x768collage_final.png)
+![Equation for Unpolarized Cross Section](ReadMe_Images/UnpolXS.png)
+![Equation for Mott Cross Section](ReadMe_Images/MottXS.png)
+![Equation for Longitudinal Cross Section Difference](ReadMe_Images/LongXS.png)
+![Equation for Transverse Cross Section Difference](ReadMe_Images/TransXS.png)
 ### ii) The unpolarized structure functions F1 and F2 are taken from the ‘strufunc_f1f221_dis6.f’ fortran file, which are from the F1F221 fits
 ### iii) The polarized structure functions g1 and g2 are also taken from the ‘strufunc_f1f221_dis6.f’ fortran file, and are generated using the following fits from Xiaochao’s thesis:
-![Collage of source image in top right, target image in top left, and output image in bottom left](1024x768files/1024x768collage_final.png)
-![Collage of source image in top right, target image in top left, and output image in bottom left](1024x768files/1024x768collage_final.png)
+![Equation for Fit of g1p/F1p](ReadMe_Images/g1p.png)
+![Equation for Fit of g1n/F1n](ReadMe_Images/g1n.png)
 and then combining these proton and neutron structure functions in the following way:
-![Collage of source image in top right, target image in top left, and output image in bottom left](1024x768files/1024x768collage_final.png)
+![Equation for g1p and g1n combination to get g13He](ReadMe_Images/g13he.png)
 then g2 is calculated using a numerical integration using g1
 ## b) Running the code
 ### i) Enter the YoniCode_Retry_4Dave_2/Carter/ directory
@@ -97,19 +97,19 @@ then g2 is calculated using a numerical integration using g1
 # 3) Results Using Model Method
 ## a) Theta = 11 deg
 ### i) Parallel
-![Collage of source image in top right, target image in top left, and output image in bottom left](1024x768files/1024x768collage_final.png)
+![Plot of Parallel Asymmetry for 11deg](ReadMe_Images/Apar_11deg.png)
 ### ii) Perpendicular
-![Collage of source image in top right, target image in top left, and output image in bottom left](1024x768files/1024x768collage_final.png)
+![Plot of Perpendicular Asymmetry for 11deg](ReadMe_Images/Aperp_11deg.png)
 ## b) Theta = 18 deg
 ### i) Parallel
-![Collage of source image in top right, target image in top left, and output image in bottom left](1024x768files/1024x768collage_final.png)
+![Plot of Parallel Asymmetry for 18deg](ReadMe_Images/Apar_18deg.png)
 ### ii) Perpendicular
-![Collage of source image in top right, target image in top left, and output image in bottom left](1024x768files/1024x768collage_final.png)
+![Plot of Perpendicular Asymmetry for 18deg](ReadMe_Images/Aperp_18deg.png)
 ## c) Theta = 30 deg
 ### i) Parallel
-![Collage of source image in top right, target image in top left, and output image in bottom left](1024x768files/1024x768collage_final.png)
+![Plot of Parallel Asymmetry for 30deg](ReadMe_Images/Apar_30deg.png)
 ### ii) Perpendicular
-![Collage of source image in top right, target image in top left, and output image in bottom left](1024x768files/1024x768collage_final.png)
+![Plot of Perpendicular Asymmetry for 30deg](ReadMe_Images/Aperp_30deg.png)
 # 4) Other Model Input (JAM)
 ## a) Cross Section Generation
 ### i) The cross sections are calculated using the same equations as the first model input
