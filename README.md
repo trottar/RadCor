@@ -12,7 +12,7 @@
 #### (5) For flat acceptance, I had 1 for the x^0 coefficient on the 2nd line and 0 for every other coefficient in the first 3 lines; then have min2 and max2 be the range you want flat acceptance for
 #### (6) x above represents the angle in degrees
 ### iii) Dataset Config
-#### (1) I recommend the following naming convention for dataset config files: “data_sets_<theta>deg_<polarization>.conf” where theta is the scattering angle in degrees and polarization is “unpol”, “long”, or “trans”
+#### (1) I recommend the following naming convention for dataset config files: “data_sets_\<theta\>deg_\<polarization\>.conf” where theta is the scattering angle in degrees and polarization is “unpol”, “long”, or “trans”
 #### (2) Each dataset config file should contain datasets with varying beam energies at the same scattering angle
 #### (3) These dataset config files should be placed in the following directory: CAnalyzer-master/example/configs/
 #### (4) Theta can be set in the Settings section
@@ -32,12 +32,12 @@
 ### v) rad_cor.C Inputs
 #### (1) The rad_corr() function
 ##### (a) No inputs are necessary, although the default dataset config file and output file are probably not what you want
-##### (b) 1st parameter is the dataset config file name as a string; it should be of the form “configs/<dataset_config_filename>.conf”
-##### (c) 2nd parameter is the output file name as a string; it should be of the form “output/<output_fiilename>.dat” I recommend the following output file naming convention: “output/radcor_out<Ebeam>_<theta>deg_<polarization>.dat” where Ebeam is the beam energy in MeV
+##### (b) 1st parameter is the dataset config file name as a string; it should be of the form “configs/\<dataset_config_filename\>.conf”
+##### (c) 2nd parameter is the output file name as a string; it should be of the form “output/\<output_fiilename\>.dat” I recommend the following output file naming convention: “output/radcor_out\<Ebeam\>_\<theta\>deg_\<polarization\>.dat” where Ebeam is the beam energy in MeV
 #### (2) The radiate() function
 ##### (a) Again, no inputs are necessary, but I recommend using them for changing dataset config file name and output file name
 ##### (b) 1st parameter is the dataset config file name as a string (same as above)
-##### (c) 2nd parameter is output file name as a string I recommend the following output file naming convention: “output/radiated_model_<theta>deg_<polarization>.dat”
+##### (c) 2nd parameter is output file name as a string I recommend the following output file naming convention: “output/radiated_model_\<theta\>deg_\<polarization\>.dat”
 ## b) Output
 ### i) The rad_corr() function
 #### (1) The output file of calling this function has labels for each column at the top of the file, but here is the output format: Ebeam nu sigrad sigborn staterr systerr where Ebeam is in MeV, nu is in MeV, sigrad is the input radiated cross section, sigborn is the result cross section
@@ -57,8 +57,8 @@
 ##### (1) Enter the /CAnalyzer-master/example/ directory
 ##### (2) Type ‘root’ into the command line to start ROOT
 ##### (3) Type ‘.L rad_corr.C’ into ROOT to load the macro
-### v) Type the following in ROOT to run the rad_cor() function: ‘rad_cor(“configs/<dataset_config_filename>.conf”,“output/<output_fiilename>.dat”)’
-### vi) Type the following in ROOT to run the radiate() function: ‘radiate(“configs/<dataset_config_filename>.conf”,“output/<output_fiilename>.dat”)’
+### v) Type the following in ROOT to run the rad_cor() function: ‘rad_cor(“configs/\<dataset_config_filename\>.conf”,“output/\<output_fiilename\>.dat”)’
+### vi) Type the following in ROOT to run the radiate() function: ‘radiate(“configs/\<dataset_config_filename\>.conf”,“output/\<output_fiilename\>.dat”)’
 ### vii) Additionally, to run the radiate() function on all a1n d2n kinematics (11, 18, 30deg) and polarizations (unpol, long, trans) I have implemented a function called radiate_all() which you can run to make it simpler
 # 2) Model Input to Radiate
 ## a) Cross Section Generation
@@ -79,7 +79,7 @@ then g2 is calculated using a numerical integration using g1
 ### ii) Type ‘make’ into the command line to compile the code
 ### iii) To ensure compilation with no errors, type ‘make’ into the command line again and check that the output is: make: 'xs_gen_dis6' is up to date.
 ### iv) Type ‘./xs_gen_dis6’ to generate all the cross section data for theta values 11, 18, and 30
-### v) The output files will be placed in the /Data directory with the following naming convention: ‘E<Ebeam>_<theta>deg<polarization>.dat’ where Ebeam is in MeV, theta is in degrees, and polarization is “” for unpolarized, “long” for longitudinal, and “trans” for transversal
+### v) The output files will be placed in the /Data directory with the following naming convention: ‘E\<Ebeam\>_\<theta\>deg\<polarization\>.dat’ where Ebeam is in MeV, theta is in degrees, and polarization is “” for unpolarized, “long” for longitudinal, and “trans” for transversal
 ### vi) The output files are also copied directly into the /CAnalyzer-master/example/data directory
 ## c) Radiating
 ### i) Follow the steps in the RadCorr Instructions section to run the radiate() function on this generated data
@@ -91,8 +91,8 @@ then g2 is calculated using a numerical integration using g1
 ##### (2) Below is the calculation for the perpendicular Asymmetry
 ##### (3) These are calculated in the python plotting file from the results of the radiate() function
 ### iv) This will output plots of xs vs E’ and plots of Asymm vs x in the /Plots directory with the following naming conventions
-##### (1) For xs plots: ‘<theta>deg_<polarization>.png’ where polarization is either ‘unpol’, ‘long’, or ‘trans’
-##### (2) For Asymm plots: ‘<theta>deg_A<par/perp>.png’
+##### (1) For xs plots: ‘\<theta\>deg_\<polarization\>.png’ where polarization is either ‘unpol’, ‘long’, or ‘trans’
+##### (2) For Asymm plots: ‘\<theta\>deg_A\<par/perp\>.png’
 ### v) Note: the Asymmetry plots should have data points for theta = 11,18,30 degrees
 # 3) Results Using Model Method
 ## a) Theta = 11 deg
@@ -119,7 +119,7 @@ then g2 is calculated using a numerical integration using g1
 ### ii) Type ‘make’ into the command line to compile the code
 ### iii) To ensure compilation with no errors, type ‘make’ into the command line again and check that the output is: make: 'xs_gen_jam' is up to date.
 ### iv) Type ‘./xs_gen_jam’ to generate all the cross section data for theta values 11, 18, and 30
-### v) The output files will be placed in the /Data directory with the following naming convention: ‘E<Ebeam>_<theta>deg<polarization>.dat’ where Ebeam is in MeV, theta is in degrees, and polarization is “” for unpolarized, “long” for longitudinal, and “trans” for transversal
+### v) The output files will be placed in the /Data directory with the following naming convention: ‘E\<Ebeam\>_\<theta\>deg\<polarization\>.dat’ where Ebeam is in MeV, theta is in degrees, and polarization is “” for unpolarized, “long” for longitudinal, and “trans” for transversal
 ### vi) The output files are also copied directly into the /CAnalyzer-master/example/data directory
 ### vii) Note: This will overwrite the previous model input model files
 ## c) The only difference here is the structure functions used; using the radiate() function and the python plotting code should work exactly the same
