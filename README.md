@@ -84,7 +84,7 @@ then g2 is calculated using a numerical integration using g1
 ## c) Radiating
 ### i) Follow the steps in the RadCorr Instructions section to run the radiate() function on this generated data
 ## d) Plotting
-### i) Use the ‘plot_radcor3.py’ python file to make the plots
+### i) Use the ‘plot_radcor3.py’ python file to make the plots (type 'python plot_radcor3.py' or 'python3 plot_radcor3.py' into terminal)
 ### ii) This should produce plots for all 3 theta values
 ### iii) Asymmetry Calculation
 ##### (1) Below is the calculation for the parallel Asymmetry
