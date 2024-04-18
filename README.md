@@ -2,7 +2,7 @@
 ## a) Input
 ### i) Datasets
 #### (1) All data files should be placed in the following directory: CAnalyzer-master/example/data/
-#### (2) Data files should be have the following format: nu xs staterr systerr
+#### (2) Data files should be have the following format: nu[MeV] xs staterr systerr
 #### (3) Each data file should include data with same beam energy and scattering angle
 ### ii) Angle Acceptance File
 #### (1) First 3 lines represent the polynomial coefficients for the stepwise acceptance function; 4th line tells the ranges of the stepwise functions
