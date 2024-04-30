@@ -4,7 +4,8 @@
 using namespace std;
 
 // void rad_corr(const string &data_conf = "configs/data_sets_9deg.conf")
-void rad_corr(const string &data_conf = "configs/data_sets_test.conf", const string &output = "output/radcor_out.dat")
+//void rad_corr(const string &data_conf = "configs/data_sets_test.conf", const string &output = "output/radcor_out.dat")
+void rad_corr(const string &data_conf, const string &output)
 {
     CRadCorr rad_cor;
     rad_cor.Configure("configs/rad_corr.conf");
