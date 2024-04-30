@@ -3,7 +3,7 @@
 #
 # Description:
 # ================================================================
-# Time-stamp: "2024-04-30 11:39:25 trottar"
+# Time-stamp: "2024-04-30 11:42:10 trottar"
 # ================================================================
 #
 # Author:  Richard L. Trotta III <trottar.iii@gmail.com>
@@ -36,17 +36,7 @@ while getopts 'hca' flag; do
 done
 
 # Source root version
-#source /apps/root/6.22.06/setroot_CUE.bash
-source /apps/root/6.28.06/setROOT_CUE-gcc10.2.0.sh # Carter used 6.30.0, g++ 12.3.0
-# Method 2: Setting environment variables
-export CC=/apps/gcc/12.3.0/bin/gcc
-export CXX=/apps/gcc/12.3.0/bin/g++
-
-echo
-echo
-which g++
-echo
-echo
+source /apps/root/6.28.06/setROOT_CUE-gcc10.2.0.sh # Carter used 6.30.0, g++ 12.3.0, but this seems to work fine
 
 dataset_config_filename="data_sets_test"
 radcorr_output_fiilename="radcor_out"
