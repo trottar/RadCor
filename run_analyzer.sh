@@ -3,7 +3,7 @@
 #
 # Description:
 # ================================================================
-# Time-stamp: "2024-04-30 08:11:30 trottar"
+# Time-stamp: "2024-04-30 08:13:58 trottar"
 # ================================================================
 #
 # Author:  Richard L. Trotta III <trottar.iii@gmail.com>
@@ -38,7 +38,7 @@ done
 # Source root version
 source /apps/root/6.22.06/setroot_CUE.bash
 
-dataset_config_filename="data_example"
+dataset_config_filename="data_sets_test"
 output_fiilename="radcor_out"
 
 # Specific example
