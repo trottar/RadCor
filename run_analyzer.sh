@@ -3,7 +3,7 @@
 #
 # Description:
 # ================================================================
-# Time-stamp: "2024-04-30 11:34:49 trottar"
+# Time-stamp: "2024-04-30 11:34:57 trottar"
 # ================================================================
 #
 # Author:  Richard L. Trotta III <trottar.iii@gmail.com>
@@ -45,6 +45,8 @@ export CXX=/usr/bin/g++-12.3.0
 echo
 echo
 which g++
+echo
+echo
 
 dataset_config_filename="data_sets_test"
 radcorr_output_fiilename="radcor_out"
