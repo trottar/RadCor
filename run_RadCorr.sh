@@ -3,7 +3,7 @@
 #
 # Description:
 # ================================================================
-# Time-stamp: "2024-04-30 13:02:57 trottar"
+# Time-stamp: "2024-04-30 14:40:37 trottar"
 # ================================================================
 #
 # Author:  Richard L. Trotta III <trottar.iii@gmail.com>
@@ -39,33 +39,66 @@ while getopts 'hca' flag; do
     esac
 done
 
-angle=$2
-polar=$3
-echo "Angle must be one of - [11 - 18 - 30]"
-if [[ -z "$2" || ! "$angle" =~ 11|18|30 ]]; then # Check the 2nd argument was provided and that it's one of the valid options
-    echo ""
-    echo "I need a valid angle..."
-    while true; do
+
+if [[ $c_flag == "true" ]]; then
+    angle=$2
+    polar=$3
+    echo "Angle must be one of - [11 - 18 - 30]"
+    if [[ -z "$2" || ! "$angle" =~ 11|18|30 ]]; then # Check the 2nd argument was provided and that it's one of the valid options
 	echo ""
-	read -p "Angle must be one of - [11 - 18 - 30] - or press ctrl-c to exit : " angle
-	case $angle in
-	    '');; # If blank, prompt again
-	    '11'|'18'|'30') break;; # If a valid option, break the loop and continue
-	esac
-    done
-fi
-echo "Polarization must be one of - [long - trans - unpol]"
-if [[ -z "$3" || ! "$polar" =~ long|trans|unpol ]]; then # Check the 2nd argument was provided and that it's one of the valid options
-    echo ""
-    echo "I need a valid polarization..."
-    while true; do
+	echo "I need a valid angle..."
+	while true; do
+	    echo ""
+	    read -p "Angle must be one of - [11 - 18 - 30] - or press ctrl-c to exit : " angle
+	    case $angle in
+		'');; # If blank, prompt again
+		'11'|'18'|'30') break;; # If a valid option, break the loop and continue
+	    esac
+	done
+    fi
+    echo "Polarization must be one of - [long - trans - unpol]"
+    if [[ -z "$3" || ! "$polar" =~ long|trans|unpol ]]; then # Check the 2nd argument was provided and that it's one of the valid options
 	echo ""
-	read -p "Polarization must be one of - [long - trans - unpol] - or press ctrl-c to exit : " polar
-	case $polar in
-	    '');; # If blank, prompt again
-	    'long'|'trans'|'unpol') break;; # If a valid option, break the loop and continue
-	esac
-    done
+	echo "I need a valid polarization..."
+	while true; do
+	    echo ""
+	    read -p "Polarization must be one of - [long - trans - unpol] - or press ctrl-c to exit : " polar
+	    case $polar in
+		'');; # If blank, prompt again
+		'long'|'trans'|'unpol') break;; # If a valid option, break the loop and continue
+	    esac
+	done
+    fi
+
+else    
+    angle=$1
+    polar=$2
+    echo "Angle must be one of - [11 - 18 - 30]"
+    if [[ -z "$1" || ! "$angle" =~ 11|18|30 ]]; then # Check the 2nd argument was provided and that it's one of the valid options
+	echo ""
+	echo "I need a valid angle..."
+	while true; do
+	    echo ""
+	    read -p "Angle must be one of - [11 - 18 - 30] - or press ctrl-c to exit : " angle
+	    case $angle in
+		'');; # If blank, prompt again
+		'11'|'18'|'30') break;; # If a valid option, break the loop and continue
+	    esac
+	done
+    fi
+    echo "Polarization must be one of - [long - trans - unpol]"
+    if [[ -z "$2" || ! "$polar" =~ long|trans|unpol ]]; then # Check the 2nd argument was provided and that it's one of the valid options
+	echo ""
+	echo "I need a valid polarization..."
+	while true; do
+	    echo ""
+	    read -p "Polarization must be one of - [long - trans - unpol] - or press ctrl-c to exit : " polar
+	    case $polar in
+		'');; # If blank, prompt again
+		'long'|'trans'|'unpol') break;; # If a valid option, break the loop and continue
+	    esac
+	done
+    fi
 fi
 
 # Source root version
