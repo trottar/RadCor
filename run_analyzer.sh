@@ -3,7 +3,7 @@
 #
 # Description:
 # ================================================================
-# Time-stamp: "2024-04-30 07:31:36 trottar"
+# Time-stamp: "2024-04-30 07:33:07 trottar"
 # ================================================================
 #
 # Author:  Richard L. Trotta III <trottar.iii@gmail.com>
@@ -38,11 +38,13 @@ done
 dataset_config_filename="data_example"
 output_fiilename="radcor_out"
 
-# Source proper root version
-source /apps/root/6.22.06/setroot_CUE.bash
-
 # Compile CAnalyzer
 if [[ $c_flag == "true" ]]; then
+    echo
+    echo
+    echo "Compiling..."
+    echo
+    echo
     cd "CAnalyzer-master"
     make clean
     make
@@ -50,6 +52,11 @@ if [[ $c_flag == "true" ]]; then
 fi
 
 # Load ROOT macro
+echo
+echo
+echo "Loading ROOT macro..."
+echo
+echo
 cd "CAnalyzer-master/example/"
 if [[ $a_flag == "true" ]]; then
     root -l <<EOF 
