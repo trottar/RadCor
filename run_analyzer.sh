@@ -3,7 +3,7 @@
 #
 # Description:
 # ================================================================
-# Time-stamp: "2024-04-30 07:42:20 trottar"
+# Time-stamp: "2024-04-30 07:47:16 trottar"
 # ================================================================
 #
 # Author:  Richard L. Trotta III <trottar.iii@gmail.com>
@@ -34,6 +34,9 @@ while getopts 'hca' flag; do
         exit 1 ;;
     esac
 done
+
+# Source root version
+source /apps/root/6.22.06/setroot_CUE.bash
 
 dataset_config_filename="data_example"
 output_fiilename="radcor_out"
