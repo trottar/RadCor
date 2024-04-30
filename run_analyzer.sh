@@ -3,7 +3,7 @@
 #
 # Description:
 # ================================================================
-# Time-stamp: "2024-04-30 07:56:40 trottar"
+# Time-stamp: "2024-04-30 07:57:14 trottar"
 # ================================================================
 #
 # Author:  Richard L. Trotta III <trottar.iii@gmail.com>
@@ -54,7 +54,6 @@ if [[ $c_flag == "true" ]]; then
     echo
     cd "CAnalyzer-master"
     make clean
-    make
     make
     cd "../"
 fi
