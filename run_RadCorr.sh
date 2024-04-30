@@ -3,7 +3,7 @@
 #
 # Description:
 # ================================================================
-# Time-stamp: "2024-04-30 12:58:35 trottar"
+# Time-stamp: "2024-04-30 13:00:56 trottar"
 # ================================================================
 #
 # Author:  Richard L. Trotta III <trottar.iii@gmail.com>
@@ -40,7 +40,7 @@ while getopts 'hca' flag; do
 done
 
 echo "Angle must be one of - [11 - 18 - 30]"
-if [[ -z "$1" || ! "$angle" =~ 11|18|30 ]]; then # Check the 2nd argument was provided and that it's one of the valid options
+if [[ -z "$2" || ! "$angle" =~ 11|18|30 ]]; then # Check the 2nd argument was provided and that it's one of the valid options
     echo ""
     echo "I need a valid angle..."
     while true; do
@@ -54,7 +54,7 @@ if [[ -z "$1" || ! "$angle" =~ 11|18|30 ]]; then # Check the 2nd argument was pr
 fi
 
 echo "Polarization must be one of - [long - trans - unpol]"
-if [[ -z "$2" || ! "$polar" =~ long|trans|unpol ]]; then # Check the 2nd argument was provided and that it's one of the valid options
+if [[ -z "$3" || ! "$polar" =~ long|trans|unpol ]]; then # Check the 2nd argument was provided and that it's one of the valid options
     echo ""
     echo "I need a valid polarization..."
     while true; do
