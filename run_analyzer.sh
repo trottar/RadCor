@@ -3,7 +3,7 @@
 #
 # Description:
 # ================================================================
-# Time-stamp: "2024-04-30 08:50:22 trottar"
+# Time-stamp: "2024-04-30 09:06:37 trottar"
 # ================================================================
 #
 # Author:  Richard L. Trotta III <trottar.iii@gmail.com>
@@ -65,7 +65,11 @@ echo
 echo "Loading ROOT macro..."
 echo
 echo
-cd "CAnalyzer-master/example/"
+cd "CAnalyzer-master/"
+
+cp libCAna.so "example/"
+
+cd "example/"
 if [[ $a_flag == "true" ]]; then
     root -l <<EOF 
 .L rad_corr.C
