@@ -3,7 +3,7 @@
 #
 # Description:
 # ================================================================
-# Time-stamp: "2024-04-30 13:00:56 trottar"
+# Time-stamp: "2024-04-30 13:02:47 trottar"
 # ================================================================
 #
 # Author:  Richard L. Trotta III <trottar.iii@gmail.com>
@@ -38,6 +38,9 @@ while getopts 'hca' flag; do
         exit 1 ;;
     esac
 done
+
+angle=$2
+polar=$3
 
 echo "Angle must be one of - [11 - 18 - 30]"
 if [[ -z "$2" || ! "$angle" =~ 11|18|30 ]]; then # Check the 2nd argument was provided and that it's one of the valid options
