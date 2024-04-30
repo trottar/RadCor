@@ -3,7 +3,7 @@
 #
 # Description:
 # ================================================================
-# Time-stamp: "2024-04-30 08:10:02 trottar"
+# Time-stamp: "2024-04-30 08:11:05 trottar"
 # ================================================================
 #
 # Author:  Richard L. Trotta III <trottar.iii@gmail.com>
@@ -66,12 +66,12 @@ echo
 echo
 cd "CAnalyzer-master/example/"
 if [[ $a_flag == "true" ]]; then
-    root -l -c <<EOF 
+    root -l -b <<EOF 
 .L rad_corr.C
 radiate_all()
 EOF
 else
-    root -l -c <<EOF
+    root -l -b <<EOF
 .L rad_corr.C("configs/${dataset_config_filename}.conf","output/${output_fiilename}.dat")
 rad_corr
 radiate
