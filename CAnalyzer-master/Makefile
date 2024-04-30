@@ -41,7 +41,7 @@ STRIP         =
 
 
 ####### Files
-TARGET        = examples/libCAna.so
+TARGET        = libCAna.so
 
 OBJECTS_DIR   = obj
 SOURCES_DIR   = src
