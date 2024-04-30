@@ -3,7 +3,7 @@
 #
 # Description:
 # ================================================================
-# Time-stamp: "2024-04-30 12:56:50 trottar"
+# Time-stamp: "2024-04-30 12:58:35 trottar"
 # ================================================================
 #
 # Author:  Richard L. Trotta III <trottar.iii@gmail.com>
@@ -25,6 +25,10 @@ while getopts 'hca' flag; do
         echo "    -h, help"
         echo "    -c, compile CAnalyzer"
 	echo "    -a, radiate function for all a1n d2n kinematics (11, 18, 30deg) and polarizations (unpol, long, trans)"
+	echo
+	echo " Avaliable Kinematics..."
+	echo "                      theta = 11, 18, 30 deg"
+	echo "                      polar = long, trans, unpol"
 	echo
         exit 0
         ;;
@@ -103,4 +107,3 @@ rad_corr("configs/${input_dataset_filename}.conf","output/${radcorr_output_fiile
 radiate("configs/${input_dataset_filename}.conf","output/${radiate_output_fiilename}.dat")
 EOF
 fi
-#gSystem->Load("libCAna.so")

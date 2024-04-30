@@ -3,7 +3,7 @@
 #
 # Description:
 # ================================================================
-# Time-stamp: "2024-04-30 12:38:54 trottar"
+# Time-stamp: "2024-04-30 12:59:21 trottar"
 # ================================================================
 #
 # Author:  Richard L. Trotta III <trottar.iii@gmail.com>
@@ -12,7 +12,7 @@
 #
 
 # Flag definitions (flags: h, c)
-while getopts 'hca' flag; do
+while getopts 'hcj' flag; do
     case "${flag}" in
         h) 
         echo "--------------------------------------------------------------"
@@ -24,12 +24,12 @@ while getopts 'hca' flag; do
         echo "The following flags can be called for the RadCorr analysis..."
         echo "    -h, help"
         echo "    -c, compile CAnalyzer"
-	echo "    -a, radiate function for all a1n d2n kinematics (11, 18, 30deg) and polarizations (unpol, long, trans)"
+	echo "    -j, Use JAM model"
 	echo
         exit 0
         ;;
 	c) c_flag='true' ;;
-	a) a_flag='true' ;;
+	j) j_flag='true' ;;
         *) print_usage
         exit 1 ;;
     esac
