@@ -3,7 +3,7 @@
 #
 # Description:
 # ================================================================
-# Time-stamp: "2024-04-30 07:38:26 trottar"
+# Time-stamp: "2024-04-30 07:40:12 trottar"
 # ================================================================
 #
 # Author:  Richard L. Trotta III <trottar.iii@gmail.com>
@@ -35,11 +35,12 @@ while getopts 'hca' flag; do
     esac
 done
 
-#dataset_config_filename="data_example"
-#output_fiilename="radcor_out"
+dataset_config_filename="data_example"
+output_fiilename="radcor_out"
 
-dataset_config_filename="data_sets_radiate_11deg_long"
-output_fiilename="radiated_model_11deg_long"
+# Specific example
+#dataset_config_filename="data_sets_radiate_11deg_long"
+#output_fiilename="radiated_model_11deg_long"
 
 # Compile CAnalyzer
 if [[ $c_flag == "true" ]]; then
@@ -63,11 +64,13 @@ echo
 cd "CAnalyzer-master/example/"
 if [[ $a_flag == "true" ]]; then
     root -l <<EOF 
-.x radiate_all()
+.L rad_corr.C
+radiate_all()
 EOF
 else
     root -l <<EOF
-.x rad_corr.C(“configs/${dataset_config_filename}.conf”,“output/${output_fiilename}.dat”)
-.x radiate(“configs/${dataset_config_filename}.conf”,“output/${output_fiilename}.dat”)
+.L rad_corr.C
+rad_corr(“configs/${dataset_config_filename}.conf”,“output/${output_fiilename}.dat”)
+radiate(“configs/${dataset_config_filename}.conf”,“output/${output_fiilename}.dat”)
 EOF
 fi
