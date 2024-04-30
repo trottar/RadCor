@@ -3,7 +3,7 @@
 #
 # Description:
 # ================================================================
-# Time-stamp: "2024-04-30 09:30:32 trottar"
+# Time-stamp: "2024-04-30 09:32:48 trottar"
 # ================================================================
 #
 # Author:  Richard L. Trotta III <trottar.iii@gmail.com>
@@ -67,11 +67,6 @@ echo
 echo
 cd "CAnalyzer-master/example/"
 
-# Set LD_LIBRARY_PATH to include the parent directory
-export LD_LIBRARY_PATH=../:$LD_LIBRARY_PATH
-
-echo $LD_LIBRARY_PATH
-
 if [[ $a_flag == "true" ]]; then
     root -l -b -L -I <<EOF 
 .L rad_corr.C
@@ -79,6 +74,7 @@ radiate_all()
 EOF
 else
     root -l -b -L -I <<EOF
+gSystem->Load("../libCAna.so")
 .L rad_corr.C
 rad_corr("configs/${dataset_config_filename}.conf","output/${radcorr_output_fiilename}.dat")
 radiate("configs/${dataset_config_filename}.conf","output/${radiate_output_fiilename}.dat")
