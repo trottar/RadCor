@@ -3,7 +3,7 @@
 #
 # Description:
 # ================================================================
-# Time-stamp: "2024-04-30 07:34:07 trottar"
+# Time-stamp: "2024-04-30 07:38:26 trottar"
 # ================================================================
 #
 # Author:  Richard L. Trotta III <trottar.iii@gmail.com>
@@ -35,8 +35,11 @@ while getopts 'hca' flag; do
     esac
 done
 
-dataset_config_filename="data_example"
-output_fiilename="radcor_out"
+#dataset_config_filename="data_example"
+#output_fiilename="radcor_out"
+
+dataset_config_filename="data_sets_radiate_11deg_long"
+output_fiilename="radiated_model_11deg_long"
 
 # Compile CAnalyzer
 if [[ $c_flag == "true" ]]; then
