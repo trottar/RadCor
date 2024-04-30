@@ -3,7 +3,7 @@
 #
 # Description:
 # ================================================================
-# Time-stamp: "2024-04-30 09:06:37 trottar"
+# Time-stamp: "2024-04-30 09:09:29 trottar"
 # ================================================================
 #
 # Author:  Richard L. Trotta III <trottar.iii@gmail.com>
@@ -65,18 +65,14 @@ echo
 echo "Loading ROOT macro..."
 echo
 echo
-cd "CAnalyzer-master/"
-
-cp libCAna.so "example/"
-
-cd "example/"
+cd "CAnalyzer-master/example/"
 if [[ $a_flag == "true" ]]; then
-    root -l <<EOF 
+    root -l -q -L <<EOF 
 .L rad_corr.C
 radiate_all()
 EOF
 else
-    root -l <<EOF
+    root -l -q -L <<EOF
 .L rad_corr.C
 rad_corr("configs/${dataset_config_filename}.conf","output/${radcorr_output_fiilename}.dat")
 radiate("configs/${dataset_config_filename}.conf","output/${radiate_output_fiilename}.dat")
