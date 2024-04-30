@@ -10,7 +10,7 @@ MAKEFILE      = Makefile
 ####### Compiler, tools and options
 
 CC            = gcc
-CXX           = g++
+CXX           = g++-12.3.0
 FORTRAN       = gfortran
 CXXFLAGS      = -shared -pipe -O2 -g -Wall -m64 -mtune=generic -fPIC
 CXXFLAGS     += $(shell root-config --cflags)
@@ -45,7 +45,6 @@ TARGET        = libCAna.so
 
 OBJECTS_DIR   = obj
 SOURCES_DIR   = src
-INCLUDE_DIR   = include
 
 CXX_SUFFIX    = cpp
 CXX_SOURCES   = canalib \
@@ -93,10 +92,10 @@ cleanobj:
 cleantgt:
 	-$(DEL_FILE) $(TARGET)
 
-$(OBJECTS_DIR)/%.cpp.o: $(SOURCES_DIR)/%.$(CXX_SUFFIX) $(wildcard $(INCLUDE_DIR)/*.h)
+$(OBJECTS_DIR)/%.cpp.o: $(SOURCES_DIR)/%.$(CXX_SUFFIX)
 	$(CXX) -c $(CXXFLAGS) ${INCPATH} -o $@ $<
 
-$(OBJECTS_DIR)/%.f.o: $(SOURCES_DIR)/%.$(F_SUFFIX) $(wildcard $(INCLUDE_DIR)/*.h)
+$(OBJECTS_DIR)/%.f.o: $(SOURCES_DIR)/%.$(F_SUFFIX)
 	$(FORTRAN) -c $(FFLAGS) ${INCPATH} -o $@ $<
 
 ####### Install
