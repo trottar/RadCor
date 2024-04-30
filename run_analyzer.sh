@@ -3,7 +3,7 @@
 #
 # Description:
 # ================================================================
-# Time-stamp: "2024-04-30 11:33:40 trottar"
+# Time-stamp: "2024-04-30 11:34:49 trottar"
 # ================================================================
 #
 # Author:  Richard L. Trotta III <trottar.iii@gmail.com>
@@ -41,6 +41,10 @@ source /apps/root/6.30.04/setroot_CUE.bash
 # Method 2: Setting environment variables
 export CC=/usr/bin/gcc-12.3.0
 export CXX=/usr/bin/g++-12.3.0
+
+echo
+echo
+which g++
 
 dataset_config_filename="data_sets_test"
 radcorr_output_fiilename="radcor_out"
