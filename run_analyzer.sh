@@ -3,7 +3,7 @@
 #
 # Description:
 # ================================================================
-# Time-stamp: "2024-04-30 10:08:46 trottar"
+# Time-stamp: "2024-04-30 10:09:19 trottar"
 # ================================================================
 #
 # Author:  Richard L. Trotta III <trottar.iii@gmail.com>
@@ -74,7 +74,7 @@ radiate_all()
 EOF
 else
     root -l <<EOF
-.x rad_corr.C
+.L rad_corr.C+
 rad_corr("configs/${dataset_config_filename}.conf","output/${radcorr_output_fiilename}.dat")
 radiate("configs/${dataset_config_filename}.conf","output/${radiate_output_fiilename}.dat")
 EOF
