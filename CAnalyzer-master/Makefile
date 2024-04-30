@@ -10,7 +10,7 @@ MAKEFILE      = Makefile
 ####### Compiler, tools and options
 
 CC            = gcc
-CXX           = g++-12.3.0
+CXX           = g++
 FORTRAN       = gfortran
 CXXFLAGS      = -shared -pipe -O2 -g -Wall -m64 -mtune=generic -fPIC
 CXXFLAGS     += $(shell root-config --cflags)
