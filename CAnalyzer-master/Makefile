@@ -45,6 +45,7 @@ TARGET        = libCAna.so
 
 OBJECTS_DIR   = obj
 SOURCES_DIR   = src
+INCLUDE_DIR   = include
 
 CXX_SUFFIX    = cpp
 CXX_SOURCES   = canalib \
@@ -92,10 +93,10 @@ cleanobj:
 cleantgt:
 	-$(DEL_FILE) $(TARGET)
 
-$(OBJECTS_DIR)/%.cpp.o: $(SOURCES_DIR)/%.$(CXX_SUFFIX)
+$(OBJECTS_DIR)/%.cpp.o: $(SOURCES_DIR)/%.$(CXX_SUFFIX) $(wildcard $(INCLUDE_DIR)/*.h)
 	$(CXX) -c $(CXXFLAGS) ${INCPATH} -o $@ $<
 
-$(OBJECTS_DIR)/%.f.o: $(SOURCES_DIR)/%.$(F_SUFFIX)
+$(OBJECTS_DIR)/%.f.o: $(SOURCES_DIR)/%.$(F_SUFFIX) $(wildcard $(INCLUDE_DIR)/*.h)
 	$(FORTRAN) -c $(FFLAGS) ${INCPATH} -o $@ $<
 
 ####### Install
