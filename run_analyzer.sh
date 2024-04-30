@@ -3,7 +3,7 @@
 #
 # Description:
 # ================================================================
-# Time-stamp: "2024-04-30 10:08:24 trottar"
+# Time-stamp: "2024-04-30 10:08:46 trottar"
 # ================================================================
 #
 # Author:  Richard L. Trotta III <trottar.iii@gmail.com>
@@ -74,9 +74,9 @@ radiate_all()
 EOF
 else
     root -l <<EOF
-.L rad_corr.C
-.x rad_corr("configs/${dataset_config_filename}.conf","output/${radcorr_output_fiilename}.dat")
-.x radiate("configs/${dataset_config_filename}.conf","output/${radiate_output_fiilename}.dat")
+.x rad_corr.C
+rad_corr("configs/${dataset_config_filename}.conf","output/${radcorr_output_fiilename}.dat")
+radiate("configs/${dataset_config_filename}.conf","output/${radiate_output_fiilename}.dat")
 EOF
 fi
 #gSystem->Load("libCAna.so")
