@@ -3,7 +3,7 @@
 #
 # Description:
 # ================================================================
-# Time-stamp: "2024-04-30 09:26:19 trottar"
+# Time-stamp: "2024-04-30 09:27:29 trottar"
 # ================================================================
 #
 # Author:  Richard L. Trotta III <trottar.iii@gmail.com>
@@ -72,13 +72,12 @@ export LD_LIBRARY_PATH=../:$LD_LIBRARY_PATH
 
 if [[ $a_flag == "true" ]]; then
     root -l -b -L <<EOF 
-.L rad_corr.C
+.L rad_corr.C+
 radiate_all()
 EOF
 else
     root -l -b -L <<EOF
-.L ../libCAna.so+
-.L rad_corr.C
+.L rad_corr.C+
 rad_corr("configs/${dataset_config_filename}.conf","output/${radcorr_output_fiilename}.dat")
 radiate("configs/${dataset_config_filename}.conf","output/${radiate_output_fiilename}.dat")
 EOF
