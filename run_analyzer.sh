@@ -3,7 +3,7 @@
 #
 # Description:
 # ================================================================
-# Time-stamp: "2024-04-30 11:34:57 trottar"
+# Time-stamp: "2024-04-30 11:36:02 trottar"
 # ================================================================
 #
 # Author:  Richard L. Trotta III <trottar.iii@gmail.com>
@@ -37,7 +37,7 @@ done
 
 # Source root version
 #source /apps/root/6.22.06/setroot_CUE.bash
-source /apps/root/6.30.04/setroot_CUE.bash
+source /apps/root/6.28.06//setroot_CUE.bash # Carter used 6.30.0
 # Method 2: Setting environment variables
 export CC=/usr/bin/gcc-12.3.0
 export CXX=/usr/bin/g++-12.3.0
