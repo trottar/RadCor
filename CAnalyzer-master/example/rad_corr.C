@@ -6,7 +6,7 @@ using namespace std;
 // void rad_corr(const string &data_conf = "configs/data_sets_9deg.conf")
 void rad_corr(const string &data_conf = "configs/data_sets_test.conf", const string &output = "output/radcor_out.dat")
 {
-  //CRadCorr rad_cor;
+    CRadCorr rad_cor;
     rad_cor.Configure("configs/rad_corr.conf");
 
     cout << "Internal RC is ";
@@ -33,7 +33,7 @@ void rad_corr(const string &data_conf = "configs/data_sets_test.conf", const str
     else
         cout << "OFF" << endl;
 
-    //CExpData data;
+    CExpData data;
     data.ReadConfigFile(data_conf);
 
 //    rad_cor.Radiate(data);
@@ -45,7 +45,7 @@ void rad_corr(const string &data_conf = "configs/data_sets_test.conf", const str
 // void radiate(const string &data_conf = "configs/dxs_model_6deg.conf")
 void radiate(const string &data_conf = "configs/data_sets_test.conf", const string &output = "output/radiated_model.dat")
 {
-  //CRadCorr rad_cor;
+    CRadCorr rad_cor;
     rad_cor.Configure("configs/rad_corr.conf");
 
     cout << "Internal RC is ";
@@ -72,7 +72,7 @@ void radiate(const string &data_conf = "configs/data_sets_test.conf", const stri
     else
         cout << "OFF" << endl;
 
-    //CExpData data;
+    CExpData data;
     data.ReadConfigFile(data_conf);
 
     rad_cor.Radiate(data);
