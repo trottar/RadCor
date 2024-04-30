@@ -3,7 +3,7 @@
 #
 # Description:
 # ================================================================
-# Time-stamp: "2024-04-30 08:30:50 trottar"
+# Time-stamp: "2024-04-30 08:50:22 trottar"
 # ================================================================
 #
 # Author:  Richard L. Trotta III <trottar.iii@gmail.com>
@@ -29,7 +29,7 @@ while getopts 'hca' flag; do
         exit 0
         ;;
 	c) c_flag='true' ;;
-	r) a_flag='true' ;;
+	a) a_flag='true' ;;
         *) print_usage
         exit 1 ;;
     esac
