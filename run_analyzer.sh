@@ -3,7 +3,7 @@
 #
 # Description:
 # ================================================================
-# Time-stamp: "2024-04-30 08:13:58 trottar"
+# Time-stamp: "2024-04-30 08:15:48 trottar"
 # ================================================================
 #
 # Author:  Richard L. Trotta III <trottar.iii@gmail.com>
@@ -39,7 +39,8 @@ done
 source /apps/root/6.22.06/setroot_CUE.bash
 
 dataset_config_filename="data_sets_test"
-output_fiilename="radcor_out"
+radcorr_output_fiilename="radcor_out"
+radiate_output_fiilename="radiated_model"
 
 # Specific example
 #dataset_config_filename="data_sets_radiate_11deg_long"
@@ -72,8 +73,8 @@ radiate_all()
 EOF
 else
     root -l <<EOF
-.L rad_corr.C("configs/${dataset_config_filename}.conf","output/${output_fiilename}.dat")
-rad_corr
-radiate
+.L rad_corr.C+
+rad_corr("configs/${dataset_config_filename}.conf","output/${radcorr_output_fiilename}.dat")
+radiate("configs/${dataset_config_filename}.conf","output/${radiate_output_fiilename}.dat")
 EOF
 fi
