@@ -3,7 +3,7 @@
 #
 # Description:
 # ================================================================
-# Time-stamp: "2024-04-30 12:23:39 trottar"
+# Time-stamp: "2024-04-30 12:38:54 trottar"
 # ================================================================
 #
 # Author:  Richard L. Trotta III <trottar.iii@gmail.com>
@@ -38,14 +38,6 @@ done
 # Source root version
 source /apps/root/6.28.06/setROOT_CUE-gcc10.2.0.sh # Carter used 6.30.0, g++ 12.3.0, but this seems to work fine
 
-dataset_config_filename="data_sets_test"
-radcorr_output_fiilename="radcor_out"
-radiate_output_fiilename="radiated_model"
-
-# Specific example
-#dataset_config_filename="data_sets_radiate_11deg_long"
-#output_fiilename="radiated_model_11deg_long"
-
 # Compile CAnalyzer
 if [[ $c_flag == "true" ]]; then
     echo
@@ -58,11 +50,19 @@ if [[ $c_flag == "true" ]]; then
     make
 fi
 
-# Load ROOT macro
-echo
-echo
-echo "Generating cross section for theta of 11, 18, 30..."
-echo
-echo
+if [[ $j_flag == "true" ]]; then
+    echo
+    echo
+    echo "Generating cross section using JAM for theta of 11, 18, 30..."
+    echo
+    echo
+    ./xs_gen_jam
+else
+    echo
+    echo
+    echo "Generating cross section using JAM for theta of 11, 18, 30..."
+    echo
+    echo    
+    ./xs_gen_dis6
+fi
 
-./xs_gen_dis6

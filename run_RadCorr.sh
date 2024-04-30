@@ -3,7 +3,7 @@
 #
 # Description:
 # ================================================================
-# Time-stamp: "2024-04-30 11:42:10 trottar"
+# Time-stamp: "2024-04-30 12:56:50 trottar"
 # ================================================================
 #
 # Author:  Richard L. Trotta III <trottar.iii@gmail.com>
@@ -35,16 +35,40 @@ while getopts 'hca' flag; do
     esac
 done
 
+echo "Angle must be one of - [11 - 18 - 30]"
+if [[ -z "$1" || ! "$angle" =~ 11|18|30 ]]; then # Check the 2nd argument was provided and that it's one of the valid options
+    echo ""
+    echo "I need a valid angle..."
+    while true; do
+	echo ""
+	read -p "Angle must be one of - [11 - 18 - 30] - or press ctrl-c to exit : " angle
+	case $angle in
+	    '');; # If blank, prompt again
+	    '11'|'18'|'30') break;; # If a valid option, break the loop and continue
+	esac
+    done
+fi
+
+echo "Polarization must be one of - [long - trans - unpol]"
+if [[ -z "$2" || ! "$polar" =~ long|trans|unpol ]]; then # Check the 2nd argument was provided and that it's one of the valid options
+    echo ""
+    echo "I need a valid polarization..."
+    while true; do
+	echo ""
+	read -p "Polarization must be one of - [long - trans - unpol] - or press ctrl-c to exit : " polar
+	case $polar in
+	    '');; # If blank, prompt again
+	    'long'|'trans'|'unpol') break;; # If a valid option, break the loop and continue
+	esac
+    done
+fi
+
 # Source root version
 source /apps/root/6.28.06/setROOT_CUE-gcc10.2.0.sh # Carter used 6.30.0, g++ 12.3.0, but this seems to work fine
 
-dataset_config_filename="data_sets_test"
-radcorr_output_fiilename="radcor_out"
-radiate_output_fiilename="radiated_model"
-
-# Specific example
-#dataset_config_filename="data_sets_radiate_11deg_long"
-#output_fiilename="radiated_model_11deg_long"
+input_dataset_filename="data_sets_radiate_${angle}deg_${polar}"
+radcorr_output_fiilename="radcor_${angle}deg_${polar}"
+radiate_output_fiilename="radiated_model_${angle}deg_${polar}"
 
 # Compile CAnalyzer
 if [[ $c_flag == "true" ]]; then
@@ -75,8 +99,8 @@ EOF
 else
     root -l <<EOF
 .L rad_corr.C
-rad_corr("configs/${dataset_config_filename}.conf","output/${radcorr_output_fiilename}.dat")
-radiate("configs/${dataset_config_filename}.conf","output/${radiate_output_fiilename}.dat")
+rad_corr("configs/${input_dataset_filename}.conf","output/${radcorr_output_fiilename}.dat")
+radiate("configs/${input_dataset_filename}.conf","output/${radiate_output_fiilename}.dat")
 EOF
 fi
 #gSystem->Load("libCAna.so")
